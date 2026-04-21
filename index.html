@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TerraLink - Smart Hiring Portal</title>
+    <script>
+      window.onerror = function(msg, url, line, col, error) {
+        console.error("GLOBAL ERROR:", msg, "at", url, ":", line, ":", col);
+        document.body.innerHTML = '<div style="color:red; padding:20px; font-family:sans-serif;"><h1>Critical Error</h1><p>' + msg + '</p><p>Check console for details.</p></div>';
+        return false;
+      };
+      window.onunhandledrejection = function(event) {
+        console.error("UNHANDLED REJECTION:", event.reason);
+      };
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx?t=DEBUG_1"></script>
+  </body>
+</html>

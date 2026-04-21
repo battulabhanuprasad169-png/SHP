@@ -1,0 +1,185 @@
+/* ResumeBuilder.css - Best of 2026 Edition */
+:root {
+  --preview-bg: #f5f7fa;
+  --resume-paper: #ffffff;
+  --accent-color: #3b82f6;
+  --text-dark: #1e293b;
+  --text-grey: #64748b;
+  --text-light: #94a3b8;
+  --border: #e2e8f0;
+}
+
+.resume-builder-container {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+  background-color: var(--preview-bg);
+  position: relative;
+}
+
+.back-btn-pill {
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  z-index: 100;
+  background: white;
+  border: 1px solid var(--border);
+  padding: 0.6rem 1.2rem;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: 700;
+  color: var(--text-dark);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+/* Template Selection Screen */
+.template-selection-container {
+  width: 100%;
+  padding: 4rem 2rem;
+  overflow-y: auto;
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.selection-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.selection-header h1 { font-size: 2.8rem; font-weight: 900; color: #0f172a; margin-bottom: 1rem; }
+.selection-header p { font-size: 1.1rem; color: #64748b; }
+
+.templates-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.template-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 20px;
+  cursor: pointer;
+  border: 3px solid transparent;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.template-card.active, .template-card:hover { 
+  border-color: #3b82f6; 
+  transform: translateY(-8px);
+}
+
+.tmp-desc { font-size: 0.85rem; color: #64748b; margin-bottom: 1.5rem; }
+
+.template-preview-img {
+  width: 100%;
+  aspect-ratio: 1/1.4;
+  background: #f8fafc;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+.template-badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: #0f172a;
+  color: white;
+  padding: 0.3rem 0.8rem;
+  border-radius: 50px;
+  font-weight: 800;
+  font-size: 0.8rem;
+}
+
+.img-placeholder {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: top;
+}
+
+/* Editor Panel */
+.resume-editor {
+  flex: 0 0 450px;
+  background: white;
+  border-right: 1px solid var(--border);
+  overflow-y: auto;
+  padding: 3rem 2rem;
+  scrollbar-width: thin;
+}
+
+.editor-intro h2 { font-size: 1.6rem; font-weight: 800; color: #0f172a; margin-bottom: 0.5rem; }
+.editor-intro p { font-size: 0.9rem; color: #64748b; margin-bottom: 2.5rem; }
+
+.editor-group { margin-bottom: 2.5rem; }
+.group-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
+.group-title { font-size: 0.95rem; font-weight: 800; color: #3b82f6; text-transform: uppercase; letter-spacing: 1px; }
+
+.input-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.form-item label { display: block; font-size: 0.75rem; font-weight: 700; color: #64748b; margin-bottom: 0.3rem; }
+.form-item input { width: 100%; padding: 0.7rem; border: 1.5px solid #e2e8f0; border-radius: 8px; font-size: 0.9rem; }
+
+.entry-v2 { background: #f8fafc; padding: 1rem; border-radius: 12px; margin-bottom: 1rem; display: flex; flex-direction: column; gap: 0.75rem; border: 1px solid #e2e8f0; }
+.add-v2 { background: #0f172a; color: white; border: none; padding: 0.4rem 1rem; border-radius: 6px; font-size: 0.8rem; font-weight: 700; cursor: pointer; }
+.del-btn { background: transparent; color: #ef4444; border: none; font-size: 0.8rem; font-weight: 700; cursor: pointer; text-decoration: underline; margin-top: 0.5rem; }
+
+/* Preview Panel */
+.resume-preview-panel { flex: 1; padding: 3rem; background: #e2e8f0; overflow-y: auto; display: flex; flex-direction: column; align-items: center; }
+.preview-header-bar { width: 100%; max-width: 800px; display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; background: white; padding: 1rem; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+.format-info strong { display: block; font-size: 0.9rem; }
+.format-info span { font-size: 0.75rem; color: #64748b; }
+.final-download-btn { background: #3b82f6; color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 10px; font-weight: 800; cursor: pointer; }
+
+/* RESUME PAPERS (The Patterns) */
+.resume-paper { background: white; width: 210mm; min-height: 297mm; padding: 15mm; box-shadow: 0 20px 40px rgba(0,0,0,0.1); color: #000; line-height: 1.5; font-size: 10pt; }
+
+/* Theme 1: JAKE'S RESUME (ATS Gold) */
+.theme-1 { font-family: 'Times New Roman', serif; }
+.t1-header { text-align: center; margin-bottom: 1rem; }
+.t1-header h1 { font-size: 18pt; font-weight: 900; margin-bottom: 0.3rem; }
+.t1-contact-row { font-size: 9pt; }
+.theme-1 .section-title { font-size: 11pt; font-weight: 900; border-bottom: 1px solid #000; margin: 12pt 0 6pt; text-transform: uppercase; }
+
+/* Theme 2: PRAGMATIC MODERN */
+.theme-2 { font-family: 'Inter', sans-serif; }
+.t2-header { text-align: left; border-bottom: 3pt solid #3b82f6; padding-bottom: 10pt; margin-bottom: 15pt; }
+.t2-name { font-size: 26pt; font-weight: 900; }
+.t2-links-bar a { font-size: 9pt; color: #3b82f6; margin-right: 1rem; text-decoration: none; font-weight: 600; }
+.theme-2 .section-title { font-size: 12pt; font-weight: 800; color: #3b82f6; margin: 15pt 0 8pt; display: inline-block; }
+
+/* Theme 3: EXECUTIVE CLASSIC */
+.theme-3 { font-family: Arial, sans-serif; padding: 20mm; }
+.t3-split { display: flex; justify-content: space-between; border-bottom: 1px solid #000; padding-bottom: 10pt; margin-bottom: 15pt; }
+.t3-split h1 { font-size: 28pt; font-weight: 900; }
+.t3-right { text-align: right; font-size: 9.5pt; font-weight: 600; }
+.theme-3 .section-title { font-size: 10.5pt; font-weight: 900; background: #000; color: #fff; padding: 4pt 8pt; margin: 15pt 0 10pt; text-transform: uppercase; }
+
+/* Theme 4: MINIMALIST STUDENT (Xinyun Style) */
+.theme-4 { font-family: 'Inter', sans-serif; }
+.t4-name-blue { color: #2563eb; font-size: 24pt; font-weight: 700; margin-bottom: 5pt; }
+.t4-sub { font-size: 9.5pt; color: #64748b; margin-bottom: 1.5rem; }
+.theme-4 .section-title { font-size: 11pt; font-weight: 800; color: #2563eb; border-bottom: 0.5pt solid #cbd5e1; padding-bottom: 2pt; margin: 15pt 0 10pt; }
+
+/* Universal pattern components */
+.item-main { display: flex; justify-content: space-between; font-weight: 700; font-size: 10.5pt; }
+.item-sub { display: flex; justify-content: space-between; font-style: italic; font-size: 9pt; color: #444; }
+.item-para { font-size: 9.5pt; margin-top: 3pt; color: #222; }
+.skill-unit { font-size: 9.5pt; font-weight: 500; }
+.tiny-link { font-size: 8.5pt; color: #3b82f6; text-decoration: underline; }
+
+.print-hint { font-size: 0.8rem; color: #64748b; margin-top: 1.5rem; font-style: italic; font-weight: 600; }
+
+@media print {
+  @page { size: A4; margin: 0; }
+  body * { visibility: hidden; }
+  .resume-paper, .resume-paper * { visibility: visible; }
+  .resume-paper { position: fixed; left: 0; top: 0; width: 210mm; height: 100%; box-shadow: none; padding: 10mm; }
+}
