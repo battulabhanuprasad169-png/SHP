@@ -127,7 +127,7 @@ func main() {
 
   const runBackendExecution = async (userCode, inputToProvide, lang) => {
     try {
-        const response = await fetch(`http://${window.location.hostname}:5000/api/execute`, {
+        const response = await fetch('/api/execute', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ language: lang, code: userCode, input: inputToProvide })
